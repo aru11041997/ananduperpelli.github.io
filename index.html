@@ -247,6 +247,72 @@
         }
     </script>
 
+    <!-- Add this right after opening body tag -->
+    <div id="loader"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-gray-50 dark:bg-gray-900 transition-all duration-500">
+        <div class="text-center">
+            <div class="animate-bounce mb-6">
+                <span class="text-6xl">👋</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4 animate-fade-in">Welcome!
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-6 animate-fade-in-delay">Let's explore my
+                portfolio</p>
+            <div class="w-64 h-2 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mt-8">
+                <div id="progress-bar" class="h-full bg-blue-600 dark:bg-blue-400 rounded-full"
+                    style="width: 0%; transition: width 3s linear;"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-fade-in-delay {
+            animation: fadeIn 0.5s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+    </style>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        // Initialize dark mode on loader
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Progress bar and automatic redirect
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressBar = document.getElementById('progress-bar');
+            const loader = document.getElementById('loader');
+
+            // Start progress bar animation
+            progressBar.style.width = '100%';
+
+            // Hide loader and redirect after 5 seconds
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+
     <!-- Header with Dark Mode Toggle -->
     <!-- Header with Mobile Menu -->
     <header
@@ -284,7 +350,6 @@
                 </nav>
             </div>
 
-            <!-- Mobile Menu (Hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden mt-4">
                 <nav>
                     <ul class="flex flex-col space-y-4">
@@ -344,7 +409,7 @@
                 data-aos="zoom-in" />
             <div class="space-y-4">
                 <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto px-4">
-                    Hello! I'm Anand. A passionate backend developer with 5+ years of experience in crafting scalable
+                    Hello! I'm Anand. A passionate fullstack developer with 5+ years of experience in crafting scalable
                     solutions.
                     Specializing in Java, Angular, Spring Boot, and Microservices architecture.
                 </p>
@@ -398,7 +463,8 @@
                     <p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
                         When I'm not coding, you'll find me exploring new tech trends, mentoring aspiring developers, or
                         indulging
-                        in my love for coffee and watching anime. I'm always excited to collaborate on meaningful projects that
+                        in my love for coffee and watching anime. I'm always excited to collaborate on meaningful
+                        projects that
                         have the
                         potential to make a real difference in the world.
                     </p>
@@ -418,7 +484,6 @@
                 Technical Skills
             </h2>
             <div class="max-w-5xl mx-auto">
-                <!-- Programming Languages -->
                 <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
                         Programming Languages
@@ -457,7 +522,6 @@
                     </div>
                 </div>
 
-                <!-- Frameworks & Libraries -->
                 <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
                         Frameworks & Libraries
@@ -466,7 +530,7 @@
                         <span
                             class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Spring
                             Boot</span>
-                            <span
+                        <span
                             class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Microservices</span>
                         <span
                             class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Spring</span>
@@ -593,17 +657,36 @@
                         <span
                             class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">STS</span>
                         <span
-                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">VS Code</span>
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">VS
+                            Code</span>
                         <span
                             class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">IntelliJ</span>
                     </div>
 
                 </div>
 
-                
-
-                
-
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Operation Systems
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-windows text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Windows</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-linux text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Linux</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-ubuntu text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Ubuntu</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
