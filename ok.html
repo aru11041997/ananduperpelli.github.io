@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Anand Uperpelli - Backend Developer Portfolio" />
+    <meta name="keywords" content="backend developer, java developer, spring boot, microservices" />
+    <meta name="author" content="Anand Uperpelli" />
+    <meta name="theme-color" content="#1E40AF" />
+    <title>Anand Uperpelli | Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'spin-slow': 'spin 8s linear infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                        'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular']
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- AOS Animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #4F46E5, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-tilt {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-tilt:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #EC4899;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold gradient-text">Anand Uperpelli</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+            </nav>
+            <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <i class="fas fa-moon text-gray-600 dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="relative w-48 h-48 mx-auto mb-8" data-aos="zoom-in">
+                <img src="profile.jpg" alt="Profile" 
+                     class="rounded-full border-4 border-white dark:border-gray-800 shadow-xl hover-tilt w-full h-full object-cover">
+                <div class="absolute inset-0 rounded-full border-2 border-transparent animate-spin-slow"
+                     style="border-top-color: #4F46E5; border-bottom-color: #EC4899;"></div>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+                Building Digital<br>
+                <span class="gradient-text">Experiences</span>
+            </h1>
+            
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Fullstack Developer specializing in scalable solutions with Java & Spring Boot
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    Get in Touch →
+                </a>
+                <a href="#projects" class="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-full hover:bg-blue-600 hover:text-white dark:hover:bg-blue-700 transition-all duration-300">
+                    View Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 gradient-text" data-aos="fade-down">Technical Arsenal</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <i class="fab fa-java text-4xl mb-2 text-blue-600"></i>
+                    <h3 class="font-bold mb-1">Java</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">5+ Years</p>
+                </div>
+                
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <i class="fas fa-code-branch text-4xl mb-2 text-purple-600"></i>
+                    <h3 class="font-bold mb-1">Spring Boot</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">4+ Years</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <i class="fab fa-aws text-4xl mb-2 text-orange-600"></i>
+                    <h3 class="font-bold mb-1">AWS</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">3+ Years</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <i class="fas fa-database text-4xl mb-2 text-green-600"></i>
+                    <h3 class="font-bold mb-1">SQL</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">5+ Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-12">
+        <div class="container mx-auto px-4 relative">
+            <div class="absolute left-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full hidden md:block"></div>
+            
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text" data-aos="fade-down">Professional Journey</h2>
+            
+            <div class="relative mb-8" data-aos="fade-right">
+                <div class="absolute w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-gray-900 left-1/2 transform -translate-x-1/2 -translate-y-2"></div>
+                <div class="ml-0 md:ml-16 pl-0 md:pl-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <h3 class="text-xl font-bold mb-2">Sr. Software Engineer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Fiserv Pvt Ltd • Feb 2022 - Dec 2023</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Spring Boot</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">Microservices</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>Led development of enterprise-scale applications</li>
+                            <li>Improved system performance by 40%</li>
+                            <li>Implemented CI/CD pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative mb-8" data-aos="fade-left">
+                <div class="absolute w-4 h-4 rounded-full bg-purple-600 border-4 border-white dark:border-gray-900 left-1/2 transform -translate-x-1/2 -translate-y-2"></div>
+                <div class="ml-0 md:ml-16 pl-0 md:pl-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <h3 class="text-xl font-bold mb-2">System Engineer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">EPAM Systems • Jan 2020 - Jan 2022</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">AWS</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">Angular</span>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>Developed cloud-native applications</li>
+                            <li>Implemented RESTful APIs</li>
+                            <li>Optimized database performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 gradient-text" data-aos="fade-down">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up">
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-100 dark:border-gray-600 hover-tilt">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge">Spring Boot</span>
+                        <span class="badge">React</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Scalable microservices architecture with real-time inventory management</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-100 dark:border-gray-600 hover-tilt">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge">AWS</span>
+                        <span class="badge">Lambda</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Serverless Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Real-time data processing pipeline using AWS serverless technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8" data-aos="fade-down">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto" data-aos="fade-up">
+                <a href="mailto:anand@example.com" class="p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover-tilt">
+                    <i class="fas fa-envelope text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Email</h3>
+                    <p class="text-sm opacity-90">ananduperpelli@hotmail.com</p>
+                </a>
+
+                <a href="https://linkedin.com/in/anand" target="_blank" class="p-6 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover-tilt">
+                    <i class="fab fa-linkedin text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">LinkedIn</h3>
+                    <p class="text-sm opacity-90">/in/anand-uperpelli</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2024 Anand Uperpelli. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/yourusername" target="_blank" class="hover:text-blue-400 transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/yourhandle" target="_blank" class="hover:text-blue-400 transition-colors">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+
+            // Dark mode toggle
+            function toggleDarkMode() {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            }
+
+            // Attach event listeners
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            window.toggleDarkMode = toggleDarkMode;
+        });
+    </script>
+</body>
+</html>
