@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Anand Uperpelli - Backend Developer Portfolio" />
+    <meta name="keywords"
+        content="backend developer, java developer, spring boot, microservices, full stack developer" />
+    <meta name="author" content="Anand Uperpelli" />
+    <meta name="theme-color" content="#1E40AF" />
+
+    <title>Anand Uperpelli | Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="AU.ico" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    spacing: {
+                        '18': '4.5rem',
+                        '112': '28rem',
+                        '128': '32rem',
+                    },
+                    zIndex: {
+                        '60': '60',
+                        '70': '70',
+                        '80': '80',
+                        '90': '90',
+                        '100': '100',
+                    },
+                    fontSize: {
+                        'xxs': '0.65rem',
+                    },
+                    height: {
+                        'screen-90': '90vh',
+                    },
+                    maxWidth: {
+                        '8xl': '88rem',
+                        '9xl': '96rem',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    },
+                },
+                fontFamily: {
+                    'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                },
+            },
+        };
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" defer></script>
+
+    <!-- AOS Animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <!-- Global Styles -->
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Dark Mode Scrollbar */
+        .dark ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
+        }
+
+        /* Selection Color */
+        ::selection {
+            background-color: #3B82F6;
+            color: white;
+        }
+
+        /* Focus Outline */
+        *:focus {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
+        }
+
+        /* Better Touch Device Handling */
+        @media (hover: none) {
+            .hover\:scale-105:hover {
+                transform: none !important;
+            }
+        }
+
+        /* Prevent Flash of Incorrect Theme */
+        .transition-colors {
+            transition-duration: 200ms;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Utility Classes */
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!-- SEO Tags -->
+    <meta property="og:title" content="Anand Uperpelli | Portfolio" />
+    <meta property="og:description" content="Backend Developer specializing in Java, Spring Boot, and Microservices" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="profile-image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anand Uperpelli | Portfolio" />
+    <meta name="twitter:description" content="Backend Developer specializing in Java, Spring Boot, and Microservices" />
+    <meta name="twitter:image" content="profile-image.jpg" />
+</head>
+
+<body
+    class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 font-sans transition-colors duration-200">
+    <!-- Initialize AOS and Dark Mode -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+            });
+
+            // Check for saved dark mode preference
+            if (
+                localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        });
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.theme = "light";
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.theme = "dark";
+            }
+        }
+
+        // Education section toggle
+        function toggleEducation(id) {
+            const content = document.getElementById(id);
+            const button = content.parentElement.querySelector(".fa-chevron-down");
+
+            if (content.classList.contains("hidden")) {
+                content.classList.remove("hidden");
+                button.style.transform = "rotate(180deg)";
+            } else {
+                content.classList.add("hidden");
+                button.style.transform = "rotate(0)";
+            }
+        }
+    </script>
+
+    <!-- Add this right after opening body tag -->
+    <div id="loader"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-gray-50 dark:bg-gray-900 transition-all duration-500">
+        <div class="text-center">
+            <div class="animate-bounce mb-6">
+                <span class="text-6xl">👋</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4 animate-fade-in">Welcome!
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-gray-200 mb-6 animate-fade-in-delay">Let's explore my
+                portfolio</p>
+            <div class="w-64 h-2 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mt-8">
+                <div id="progress-bar" class="h-full bg-blue-600 dark:bg-blue-400 rounded-full"
+                    style="width: 0%; transition: width 3s linear;"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-fade-in-delay {
+            animation: fadeIn 0.5s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+    </style>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        // Initialize dark mode on loader
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Progress bar and automatic redirect
+        document.addEventListener('DOMContentLoaded', function () {
+            const progressBar = document.getElementById('progress-bar');
+            const loader = document.getElementById('loader');
+
+            // Start progress bar animation
+            progressBar.style.width = '100%';
+
+            // Hide loader and redirect after 5 seconds
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 300);
+            }, 3000);
+        });
+    </script>
+
+    <!-- Header with Dark Mode Toggle -->
+    <!-- Header with Mobile Menu -->
+    <header
+        class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white py-4 fixed w-full top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo/Name -->
+                <h1 class="text-xl md:text-2xl font-bold tracking-wider">
+                    Anand Rajesh Uperpelli
+                </h1>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                    onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#intro" class="hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-200 transition-colors duration-300">About</a></li>
+                        <li><a href="#experience"
+                                class="hover:text-blue-200 transition-colors duration-300">Experience</a></li>
+                        <li><a href="#skills" class="hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                        <li><a href="#projects" class="hover:text-blue-200 transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="#contact" class="hover:text-blue-200 transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <nav>
+                    <ul class="flex flex-col space-y-4">
+                        <li><a href="#intro"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">Home</a>
+                        </li>
+                        <li><a href="#about"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">About</a>
+                        </li>
+                        <li><a href="#experience"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">Experience</a>
+                        </li>
+                        <li><a href="#skills"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">Skills</a>
+                        </li>
+                        <li><a href="#projects"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">Projects</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="block px-4 py-2 hover:bg-blue-700 rounded transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add this script for mobile menu functionality -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+    <section id="intro"
+        class="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16 md:pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0OGM2LjYyNyAwIDEyLTUuMzczIDEyLTEycy01LjM3My0xMi0xMi0xMi0xMiA1LjM3My0xMiAxMiA1LjM3MyAxMiAxMiAxMnptMC0zYzQuOTcxIDAgOS00LjAyOSA5LTlzLTQuMDI5LTktOS05LTkgNC4wMjktOSA5IDQuMDI5IDkgOSA5eiIgZmlsbC1vcGFjaXR5PSIuMDIiLz48L2c+PC9zdmc+')] opacity-20 dark:opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/5 dark:via-purple-500/5 dark:to-pink-500/5"></div>
+        
+        <!-- Content Container -->
+        <div class="container mx-auto text-center relative z-10" data-aos="fade-up">
+            <div class="relative mb-12 md:mb-16">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl transform -rotate-6"></div>
+                <img src="IMG20241213155549.jpg" alt="Profile"
+                    class="relative w-40 h-40 md:w-56 md:h-56 mx-auto rounded-full shadow-2xl border-4 border-blue-500 dark:border-blue-400 transform hover:scale-105 transition-transform duration-300 object-cover"
+                    data-aos="zoom-in" />
+            </div>
+            <div class="space-y-6 md:space-y-8 max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
+                    <span id="typing-text" class="inline-block"></span>
+                    <span class="typing-cursor">|</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                    A passionate fullstack developer with 5+ years of experience in crafting scalable
+                    solutions. Specializing in Java, Angular, Spring Boot, and Microservices architecture.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mt-8 md:mt-12">
+                    <a href="#contact"
+                        class="bg-blue-600 dark:bg-blue-700 text-white px-8 md:px-10 py-4 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base md:text-lg">
+                        Get in Touch
+                    </a>
+                    <a href="#projects"
+                        class="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-8 md:px-10 py-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-blue-600 dark:border-blue-500 text-base md:text-lg">
+                        View Projects
+                    </a>
+                    <a href="AnandUperpelli.pdf" download
+                        class="bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 px-8 md:px-10 py-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-blue-600 dark:border-blue-500 flex items-center justify-center gap-2 text-base md:text-lg">
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: currentColor;
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        #typing-text {
+            min-height: 1.2em;
+        }
+
+        /* Add smooth background transition */
+        body {
+            transition: background-color 0.5s ease;
+        }
+    </style>
+
+    <script>
+        const texts = [
+            "Hi, I'm Anand Uperpelli",
+            "I'm a Java Developer",
+            "I'm a Fullstack Developer",
+            "I'm a Software Engineer"
+        ];
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        let deletingSpeed = 50;
+        let pauseTime = 2000;
+
+        function typeText() {
+            const typingText = document.getElementById('typing-text');
+            const currentText = texts[currentTextIndex];
+
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+                typingSpeed = deletingSpeed;
+            } else {
+                typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && currentCharIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = pauseTime;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(typeText, typingSpeed);
+        }
+
+        // Start typing animation when the page loads
+        document.addEventListener('DOMContentLoaded', typeText);
+    </script>
+
+    <!-- About Section -->
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-20 bg-gray-200 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white"
+                data-aos="fade-down">
+                About Me
+            </h2>
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="space-y-6 text-center px-4">
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                        I'm a results-driven backend software developer with a passion for solving complex technical
+                        challenges
+                        and creating impactful software solutions. My journey in tech began with a fascination for how
+                        things work,
+                        which led me to pursue a Master's in Computer Information Systems at Colorado State University.
+                        Since then,
+                        I've specialized in building scalable backend systems, RESTful APIs, and microservices
+                        architecture using
+                        Java and frameworks like Spring Boot.
+                    </p>
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                        With over 5 years of industry experience, I've worked on diverse projects across e-commerce,
+                        finance,
+                        and cloud-based platforms, helping companies design robust systems that are efficient, reliable,
+                        and user-friendly.
+                        My experience extends to AWS, Docker, and Kubernetes, empowering teams to deploy, scale, and
+                        manage applications
+                        with confidence.
+                    </p>
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300">
+                        When I'm not coding, you'll find me exploring new tech trends, mentoring aspiring developers, or
+                        indulging
+                        in my love for coffee and watching anime. I'm always excited to collaborate on meaningful
+                        projects that
+                        have the
+                        potential to make a real difference in the world.
+                    </p>
+                    <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 font-semibold">
+                        Let's create something extraordinary together!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-2 md:py-2 bg-gray-200 dark:bg-gray-900"></section>
+    <section id="skills" class="py-16 md:py-20 bg-gray-200 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white"
+                data-aos="fade-down">
+                Technical Skills
+            </h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Programming Languages
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-java text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Java</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-python text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Python</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-js text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">JavaScript</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-database text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">SQL</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-html5 text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">HTML</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-css3-alt text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">CSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Frameworks & Libraries
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Spring
+                            Boot</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Microservices</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Spring</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Angular</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">React</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Node.js</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Express</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Hibernate</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">JPA</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">jQuery</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Tailwind</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Maven</span>
+
+                    </div>
+                </div>
+
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Testing & Development Tools
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">JUnit</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Mockito</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Postman</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Swagger</span>
+
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Tools & Technologies
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-aws text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">AWS</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-docker text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Docker</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-jenkins text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Jenkins</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-git-alt text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Git</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-database text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">MongoDB</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-server text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">MySQL</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-server text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">MS-SQL</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-server text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Oracle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Cloud & DevOps
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">AWS
+                            EC2</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">AWS
+                            Lambda</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">AWS
+                            S3</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Azure</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Kubernetes</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">CI/CD</span>
+                    </div>
+
+                </div>
+
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        IDEs & Development Environments
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Eclipse</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">STS</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">VS
+                            Code</span>
+                        <span
+                            class="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">IntelliJ</span>
+                    </div>
+
+                </div>
+
+                <div class="mb-8 md:mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-700 dark:text-white mb-6 text-center">
+                        Operation Systems
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-windows text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Windows</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-linux text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Linux</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                            <i class="fa-brands fa-ubuntu text-3xl text-blue-600 dark:text-blue-400"></i>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">Ubuntu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 md:py-20 bg-gray-200 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white"
+                data-aos="fade-down">
+                Professional Experience
+            </h2>
+
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Vertical Timeline Line (hidden on mobile) -->
+                <div
+                    class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-200 dark:bg-blue-700">
+                </div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-8 md:space-y-16">
+
+                    <!-- Java Developer -- NYCHA -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between" data-aos="fade-up">
+                        <!-- Timeline Dot (hidden on mobile) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 border-4 border-white dark:border-gray-800">
+                        </div>
+
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 md:pr-8">
+                            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <div class="flex flex-col mb-4">
+                                    <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400">
+                                        Java Developer
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-400">NYC Housing Authority</p>
+                                    <p class="text-gray-500 dark:text-gray-500 text-sm">July 2025 - Present</p>
+                                </div>
+                                <div class="text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p>Key responsibilities and achievements:</p>
+                                    <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                        <li>Designed, developed, and maintained Java-based enterprise applications, significantly improving performance, scalability, and user experience for NYCHA’s internal and external stakeholders.</li>
+                                        <li>Developed robust RESTful APIs using Spring Boot and Hibernate, facilitating seamless integration with frontend Angular applications and third-party services.</li>
+                                        <li>Conducted rigorous code reviews and established best practices in Java development, significantly enhancing code quality, readability, and team productivity.</li>
+                                        <li>Developed automated unit and integration tests using JUnit and Mockito, achieving 90%+ code coverage and reducing software defects by 30%.</li>
+                                        <li>Collaborated closely with frontend developers to ensure smooth integration of Java backend services with Angularbased user interfaces, improving user satisfaction scores.</li>
+                                        <li>Integrated secure authentication and authorization mechanisms using Spring Security and JWT, significantly enhancing data protection and compliance with NYCHA’s security standards.</li>
+                                        <li>Enhanced application maintainability and modularity by incorporating Java design patterns (Singleton, Factory, Observer, Builder) into critical components of NYCHA’s core systems.</li>
+                                        <li>Actively participated in Agile sprint planning and retrospective sessions, consistently refining Java-based application architecture to quickly adapt to changing business needs and priorities.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spacer for right-aligned items -->
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+
+                    <!-- Associate Software Developer at Web Digital Services -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between" data-aos="fade-up">
+                        <!-- Timeline Dot (hidden on mobile) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 border-4 border-white dark:border-gray-800">
+                        </div>
+
+                        <!-- Spacer for left-aligned items -->
+                        <div class="hidden md:block w-5/12"></div>
+
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 md:pl-8 mt-8 md:mt-0">
+                            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <div class="flex flex-col mb-4">
+                                    <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400">
+                                        Developer
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Colorado State University</p>
+                                    <p class="text-gray-500 dark:text-gray-500 text-sm">Dec 2024 - July 2025</p>
+                                </div>
+                                <div class="text-gray-700 dark:text-gray-300 space-y-4">
+                                    <div>
+                                        <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                            <li>Researched and proposed updates to the Java curriculum to incorporate modern technologies, including Spring Boot.</li>
+                                            <li>Mentored 30 students in Object-Oriented Programming concepts, providing targeted support and debugging assistance to improve their understanding and project outcomes.</li>
+                                            <li>Graded and provided constructive feedback on assignments and tests for 30 students, ensuring fair and consistent evaluation based on established rubrics.</li>
+                                            <li>Developed and documented two new programming labs focused on REST APIs and database connectivity, bridging theoretical concepts with practical, hands-on application.</li>
+                                            <li>Authored clear, concise code examples and tutorials to illustrate complex OOP topics like polymorphism, inheritance, and generics for use in lecture materials.</li>
+                                            <li>Evaluated and recommended educational tools and IDE plugins (e.</li>g.</li>, for IntelliJ or VS Code) to improve the student development workflow.</li>
+                                            <li>Collaborated with faculty to integrate version control best practices using Git and GitHub into the coursework for the first time.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sr. Software Engineer at Fiserv -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between" data-aos="fade-up">
+                        <!-- Timeline Dot (hidden on mobile) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 border-4 border-white dark:border-gray-800">
+                        </div>
+
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 md:pr-8">
+                            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <div class="flex flex-col mb-4">
+                                    <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400">
+                                        Sr Associate, Software Development Engineering
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Fiserv Pvt Ltd</p>
+                                    <p class="text-gray-500 dark:text-gray-500 text-sm">Feb 2022 - Dec 2023</p>
+                                </div>
+                                <div class="text-gray-700 dark:text-gray-300 space-y-2">
+                                    <p>Key responsibilities and achievements:</p>
+                                    <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                        <li>Led the development and integration of two major projects—Point of Sale Portal and Point of Sale Admin Portal—ensuring seamless operation and interconnectivity.</li>
+                                        <li>Migrated the Point of Sale Admin Portal to Spring Boot & Angular 10+, including encryption/decryption functionality, ensuring data security and system efficiency.</li>
+                                        <li>Provided critical support using Tomcat and Wild-Fly in Release & Integration Testing, collaborating with Business Analysts and Technical teams to enhance software reliability.</li>
+                                        <li>Designed and optimized PL/SQL procedures, database packages, and query performance, achieving 40% improvement in system response times.</li>
+                                        <li>Unit testing was performed using Junit and Mockito and validated APIs using Swagger, ensuring correctness, reliability, and performance, while also assisting with production deployment with Splunk monitoring during on-call support.</li>
+                                        <li>Integrated MapStruct in a Spring Boot application to automate and optimize DTO-to-entity mapping, reducing boilerplate code by over 70%.</li>
+                                        <li>Leveraged Jira’s reporting capabilities to track project milestones and identify resource bottlenecks, resulting in 20% faster issue resolution.</li>
+                                        <li>Provided critical assistance and support to the Business Analyst and Technical team in Release and Integration testing, alongside offering general test support to ensure software reliability and performance.</li>
+                                        <li>Made significant contributions to both functional and technical aspects of software application design, including requirement gathering/analysis, mapping/gapping, solution design, application setup, and ensuring thorough testing and robust post-implementation support.</li>
+                                        <li>Played a key role in supporting the production deployment and handling on-call duties to address and resolve issues promptly, ensuring high availability and performance.</li>
+                                        <li>Nominated as Debutant Excellence for the work completed within the joining of 6 months.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spacer for right-aligned items -->
+                        <div class="hidden md:block w-5/12"></div>
+                    </div>
+
+                    <!-- Software Engineer at Epam -->
+                    <div class="relative flex flex-col md:flex-row items-center md:justify-between" data-aos="fade-up">
+                        <!-- Timeline Dot (hidden on mobile) -->
+                        <div
+                            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 border-4 border-white dark:border-gray-800">
+                        </div>
+
+                        <!-- Spacer for left-aligned items -->
+                        <div class="hidden md:block w-5/12"></div>
+
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 md:pl-8 mt-8 md:mt-0">
+                            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <div class="flex flex-col mb-4">
+                                    <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400">
+                                        Software Engineer
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Epam Pvt Ltd</p>
+                                    <p class="text-gray-500 dark:text-gray-500 text-sm">Jan 2020 - Jan 2022</p>
+                                </div>
+                                <div class="text-gray-700 dark:text-gray-300 space-y-4">
+                                    <div>
+                                        <p class="font-semibold text-blue-700 dark:text-blue-400 mb-2">
+                                            Client Onboarding Project (July 2020 – Jan 2022)
+                                        </p>
+                                        <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                            <li>Designed and implemented unified API gateway</li>
+                                            <li>Worked with AWS Lambda, EC2, RDS, and S3</li>
+                                            <li>Implemented MongoDB for scalable data management</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-blue-700 dark:text-blue-400 mb-2">
+                                            RD-Portal Project (Feb 2020 - Jun 2020)
+                                        </p>
+                                        <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                            <li>Developed comprehensive portal for RD engineers</li>
+                                            <li>Created advanced visualization system</li>
+                                            <li>Implemented Excel integration for data management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-20 bg-gray-200 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white"
+                data-aos="fade-down">
+                Education
+            </h2>
+            <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
+                <!-- Masters Education Card -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start cursor-pointer"
+                            onclick="toggleEducation('masters-content')">
+                            <div class="flex-grow">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800 dark:text-blue-400">
+                                    Master's in Computer Information Systems
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                                    Colorado States of University, Fort Collins, CO
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">
+                                    First Class with Distinction (GPA – 3.7/4)
+                                </p>
+                            </div>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="text-gray-500 dark:text-gray-400 text-sm md:text-base mr-2 md:mr-4">Aug
+                                    2023 - Dec 2024</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <div id="masters-content"
+                            class="hidden mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                            <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2 text-sm md:text-base">
+                                Relevant Coursework:
+                            </p>
+                            <ul
+                                class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm md:text-base">
+                                <li>Application Software Infrastructure</li>
+                                <li>Software Development Methodology</li>
+                                <li>IT Communications Infrastructure</li>
+                                <li>Project Management: Information Technology</li>
+                                <li>Cybersecurity and Information Assurance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelors Education Card -->
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start cursor-pointer"
+                            onclick="toggleEducation('bachelors-content')">
+                            <div class="flex-grow">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800 dark:text-blue-400">
+                                    Bachelor's in Computer Engineering
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm md:text-base">
+                                    The University of Pune, India
+                                </p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base">
+                                    First Class with Distinction (GPA – 3.32/4)
+                                </p>
+                            </div>
+                            <div class="flex items-center mt-2 md:mt-0">
+                                <span class="text-gray-500 dark:text-gray-400 text-sm md:text-base mr-2 md:mr-4">Jul
+                                    2016 - May 2019</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                        <div id="bachelors-content"
+                            class="hidden mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                            <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2 text-sm md:text-base">
+                                Relevant Coursework:
+                            </p>
+                            <ul
+                                class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 text-sm md:text-base">
+                                <li>Data Structures and Algorithm</li>
+                                <li>Object-Oriented Programming and Design</li>
+                                <li>Database Management Systems</li>
+                                <li>Machine Learning and Artificial Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Toggle Script -->
+        <script>
+            function toggleEducation(id) {
+                const content = document.getElementById(id);
+                const button = content.parentElement.querySelector('.fa-chevron-down');
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    button.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    button.style.transform = 'rotate(0)';
+                }
+            }
+        </script>
+    </section>
+
+
+    <!-- Projects Section -->
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-20 bg-gray-200 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-white"
+                data-aos="fade-down">
+                Featured Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <!-- Quiz Management Project -->
+                <div class="project-card group" data-aos="fade-up">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <i class="fas fa-laptop-code text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400 mb-2">
+                                Quiz Management System
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">
+                            Developed a comprehensive quiz management system using microservice architecture.
+                            The system allows users to create, publish, and attempt quizzes with automated scoring
+                            functionality.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Java</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Spring
+                                    Boot</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">MySQL</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Microservices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Transfer Project -->
+                <div class="project-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <i class="fas fa-wifi text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400 mb-2">
+                                Data Transfer Using Li-Fi
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">
+                            Pioneered a hardware-based data transmission system utilizing light as the medium.
+                            Implemented real-time data processing achieving high-speed transfer rates.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Hardware</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Li-Fi</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Arduino</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Real-time
+                                    Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CWIT Admission System -->
+                <div class="project-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <i class="fas fa-user-graduate text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400 mb-2">
+                                CWIT Admission System
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">
+                            Built a comprehensive admission management system featuring automated course allocation,
+                            roll number generation, and student academic record management.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">PHP</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">MySQL</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Ajax</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">jQuery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PIZZO Project -->
+                <div class="project-card group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <i class="fas fa-pizza-slice text-3xl text-blue-600 dark:text-blue-400 mb-4"></i>
+                            <h3 class="text-xl font-bold text-blue-800 dark:text-blue-400 mb-2">
+                                PIZZO
+                            </h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 text-sm md:text-base">
+                            Developed a Java-based kiosk application for pizza shops with multi-user support
+                            including Chef, Admin, and Customer interfaces.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">Java</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">JFrame</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">MySQL</span>
+                                <span
+                                    class="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-gray-800 text-sm sm:text-base text-gray-700 dark:text-gray-300 rounded-full shadow-md hover:shadow-lg transition-all duration-300">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .project-card {
+                @apply bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:bg-gray-300 dark:hover:bg-gray-700 transform hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+            }
+
+            .tech-tag {
+                @apply px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 rounded-full text-xs md:text-sm whitespace-nowrap;
+            }
+
+            .project-links {
+                @apply flex flex-wrap gap-4 pt-2;
+            }
+
+            .project-link {
+                @apply flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm md:text-base transition-colors duration-300;
+            }
+        </style>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact"
+        class="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12" data-aos="fade-down">
+                Get In Touch
+            </h2>
+
+            <!-- Contact Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <!-- Email Card -->
+                <a href="mailto:ananduperpelli@hotmail.com" class="contact-card group" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card-content">
+                        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📧</div>
+                        <h3 class="text-lg font-bold mb-2">Email</h3>
+                        <p class="text-sm md:text-base text-gray-200 break-all">ananduperpelli@hotmail.com</p>
+                    </div>
+                </a>
+
+                <!-- Phone Card -->
+                <a href="tel:+19702133994" class="contact-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-content">
+                        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📱</div>
+                        <h3 class="text-lg font-bold mb-2">Phone</h3>
+                        <p class="text-sm md:text-base text-gray-200">+1 (970) 213-3994</p>
+                    </div>
+                </a>
+
+                <!-- LinkedIn Card -->
+                <a href="https://www.linkedin.com/in/anand-uperpelli-606b65151" target="_blank"
+                    class="contact-card group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-content">
+                        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">LinkedIn</h3>
+                        <p class="text-sm md:text-base text-gray-200">View Profile</p>
+                    </div>
+                </a>
+
+                <!-- GitHub Card -->
+                <a href="https://github.com/aru11041997" target="_blank" class="contact-card group" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="card-content">
+                        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">GitHub</h3>
+                        <p class="text-sm md:text-base text-gray-200">View Projects</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <style>
+            .contact-card {
+                @apply bg-white/10 dark:bg-gray-800/10 p-6 rounded-lg hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 transform hover:-translate-y-1;
+            }
+
+            .card-content {
+                @apply flex flex-col items-center text-center;
+            }
+
+            .form-input:focus,
+            .form-textarea:focus {
+                @apply outline-none;
+            }
+        </style>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2024 Anand Uperpelli. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/anand-uperpelli-606b65151" target="_blank"
+                    class="hover:text-blue-400 transition-colors duration-300">
+                    LinkedIn
+                </a>
+                <a href="mailto:ananduperpelli@hotmail.com" class="hover:text-blue-400 transition-colors duration-300">
+                    Email
+                </a>
+            </div>
+
+            <!-- Dark Mode Credit -->
+            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                Theme: <span class="dark:hidden">Light Mode</span><span class="hidden dark:inline">Dark Mode</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 p-4 bg-blue-600 dark:bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-300 hidden md:block"
+        id="backToTop" style="display: none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Dark Mode Toggle Button -->
+    <button onclick="toggleDarkMode()"
+        class="fixed bottom-24 right-8 p-4 bg-blue-600 dark:bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-300 hidden md:block"
+        aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon dark:hidden"></i>
+        <i class="fas fa-sun hidden dark:inline"></i>
+    </button>
+
+    <!-- Additional Scripts -->
+    <script>
+        // Show/Hide Back to Top button based on scroll position
+        window.onscroll = function () {
+            const backToTopButton = document.getElementById("backToTop");
+            if (
+                document.body.scrollTop > 500 ||
+                document.documentElement.scrollTop > 500
+            ) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+    </script>
+</body>
+
+</html>
